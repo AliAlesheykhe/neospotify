@@ -1,0 +1,265 @@
+/* Container Base */
+.register-container {
+  width: 100%;
+  max-width: 550px;
+  margin: 40px auto;
+  padding: 48px;
+  background-color: #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border: 1px solid #282828;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Typography */
+.register-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 32px;
+  text-align: center;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+}
+
+/* Account Type Toggle */
+.toggle-container {
+  display: flex;
+  margin-bottom: 32px;
+  gap: 8px;
+  background-color: #121212;
+  padding: 6px;
+  border-radius: 50px;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 10px 0;
+  font-weight: 700;
+  font-size: 14px;
+  border: none;
+  border-radius: 50px;
+  background-color: transparent;
+  color: #a7a7a7;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-btn:hover {
+  color: #ffffff;
+}
+
+.toggle-btn.active {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* Form Layout */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+/* Inputs */
+.form-input {
+  width: 100%;
+  padding: 14px;
+  background-color: #121212;
+  border: 1px solid #727272;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-input::placeholder {
+  color: #a7a7a7;
+}
+
+.form-input:hover {
+  border-color: #ffffff;
+}
+
+.form-input:focus {
+  border-color: #1ed760;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(30, 215, 96, 0.3);
+}
+
+.select-input:invalid {
+  color: #a7a7a7; /* Gray out the placeholder default option */
+}
+
+.textarea-input {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Checkbox */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.form-checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: #1ed760;
+  cursor: pointer;
+  background-color: #121212;
+}
+
+.checkbox-label {
+  font-size: 14px;
+  color: #a7a7a7;
+}
+
+.privacy-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #1ed760;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline transparent;
+  transition: text-decoration 0.2s ease;
+}
+
+.privacy-link:hover {
+  text-decoration-color: #1ed760;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 14px 24px;
+  margin-top: 16px;
+  background-color: #1ed760;
+  color: #000000;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 500px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #1fdf64;
+  transform: scale(1.04);
+}
+
+.submit-btn:active {
+  transform: scale(1);
+}
+
+/* Footer */
+.footer-text {
+  text-align: center;
+  font-size: 14px;
+  color: #a7a7a7;
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+
+.login-link {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 4px;
+  transition: color 0.2s ease;
+}
+
+.login-link:hover {
+  color: #1ed760;
+  text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .register-container {
+    padding: 32px 24px;
+    margin: 20px auto;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .register-title {
+    font-size: 28px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+/* Container for input and eye toggle */
+.password-input-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Make room on the right side for the icon */
+.password-input-container .form-input {
+  padding-right: 42px; 
+}
+
+/* Position eye toggle icon button */
+.password-toggle-eye {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #a7a7a7; /* Spotify grey */
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-toggle-eye:hover {
+  color: #ffffff; /* Bright on hover */
+}
+
+/* Wrapping div for input elements to support inline error styling */
+.input-field-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.input-field-wrapper .form-input {
+  margin-bottom: 0px; /* Keep margin in wrapper instead */
+}
+
+/* Error Border Styling */
+.input-error {
+  border: 1px solid #e91429 !important; /* Red warning */
+}
+
+/* Error text styling */
+.error-message {
+  color: #e91429;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  text-align: left;
+  line-height: 1.3;
+}
+.text-wrap {
+  word-wrap: break-word;
+}
