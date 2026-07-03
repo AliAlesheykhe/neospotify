@@ -51,9 +51,6 @@ export const validateRegistration = (
         user.role === 'normal' && 
         user.displayName?.toLowerCase() === displayName.toLowerCase()
     );
-    if (displayNameExists) {
-      errors.displayName = "This display name is already taken.";
-    }
   } else {
     const artistNameExists = existingUsers.some(
       (user: any) => 

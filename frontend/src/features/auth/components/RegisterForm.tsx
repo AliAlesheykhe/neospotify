@@ -58,6 +58,12 @@ export const RegisterForm = () => {
 
     // Run custom validation
     const validationErrors = validateRegistration(formData, accountType);
+    
+    // Ignore any displayName uniqueness errors that might be returned by validateRegistration
+    if (validationErrors.displayName) {
+      delete validationErrors.displayName;
+    }
+
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
@@ -181,8 +187,7 @@ export const RegisterForm = () => {
 
             {/* Display Name field */}
             <div className="input-field-wrapper">
-              <input name="displayName" type="text" placeholder="Display Name" className={`form-input ${errors.displayName ? 'input-error' : ''}`} required />
-              {errors.displayName && <span className="error-message">{errors.displayName}</span>}
+              <input name="displayName" type="text" placeholder="Display Name" className="form-input" required />
             </div>
             
             <div className="form-row">
