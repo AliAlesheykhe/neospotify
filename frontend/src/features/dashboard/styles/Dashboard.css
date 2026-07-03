@@ -1,0 +1,305 @@
+/* Dashboard Layout Shell */
+.dashboard-layout-container {
+  display: flex;
+  background-color: #070707;
+  min-height: 100vh;
+  color: #ffffff;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.dashboard-main-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+  background: linear-gradient(180deg, #121212 0%, #080808 100%);
+}
+
+.dashboard-viewport {
+  padding: 2.5rem 2rem;
+  padding-bottom: 6rem;
+}
+
+/* Sidebar Styling */
+.sidebar-container {
+  width: 16rem;
+  background-color: #000000;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
+  color: #a3a3a3;
+  border-right: 1px solid #171717;
+  flex-shrink: 0;
+}
+
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.sidebar-logo {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding-left: 0.75rem;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  color: #b3b3b3;
+  text-decoration: none;
+}
+
+.sidebar-link:hover {
+  color: #ffffff;
+  background-color: #121212;
+}
+
+.sidebar-link-active {
+  color: #ffffff;
+  background-color: #1e1e1e;
+  font-weight: 600;
+}
+
+.sidebar-footer {
+  font-size: 0.75rem;
+  color: #525252;
+  padding-left: 0.75rem;
+}
+
+/* Header Styling */
+.header-container {
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background-color: rgba(8, 8, 8, 0.75);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-b: 1px solid #171717;
+}
+
+.header-welcome {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+}
+
+.gold-badge {
+  background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+  color: #000000;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  margin-right: 0.5rem;
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+}
+
+.header-user-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #181818;
+  padding: 0.4rem 1rem 0.4rem 0.4rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: 1px solid #262626;
+  user-select: none;
+}
+
+.header-user-badge:hover {
+  background-color: #282828;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  overflow: hidden;
+  background-color: #404040;
+}
+
+.user-display-name {
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Dashboard Shelf & Grid Typography */
+.dashboard-grid-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+/* Premium/Early Access Section */
+.early-access-banner {
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.15) 0%, rgba(245, 158, 11, 0.05) 50%, transparent 100%);
+  padding: 1.75rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+.early-access-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.early-access-icon {
+  font-size: 1.5rem;
+}
+
+.early-access-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fbbf24;
+  letter-spacing: -0.01em;
+}
+
+/* Cards & Shelves */
+.recent-playlists-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .recent-playlists-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.playlist-horizontal-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgba(24, 24, 24, 0.4);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.playlist-horizontal-card:hover {
+  background-color: rgba(40, 40, 40, 0.7);
+}
+
+.playlist-card-img-wrapper {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  flex-shrink: 0;
+}
+
+.playlist-card-name {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.playlist-card-tracks {
+  font-size: 0.75rem;
+  color: #a3a3a3;
+}
+
+/* Standard Music Items Grid */
+.music-items-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .music-items-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .music-items-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Vertical Album/Track Cards */
+.music-vertical-card {
+  background-color: rgba(24, 24, 24, 0.3);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.music-vertical-card:hover {
+  background-color: rgba(40, 40, 40, 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.music-card-img-container {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  margin-bottom: 0.875rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.music-card-title {
+  font-weight: 700;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.25rem;
+}
+
+.music-card-subtitle {
+  font-size: 0.75rem;
+  color: #a3a3a3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
