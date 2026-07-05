@@ -63,6 +63,7 @@ export const UploadTrackForm: React.FC<UploadTrackFormProps> = ({
       playCount: existingTrack?.playCount || 0,
       listenerCount: existingTrack?.listenerCount || 0,
       revenue: existingTrack?.revenue || 0,
+      duration: 0
     };
 
     setTimeout(() => {
